@@ -25,7 +25,7 @@ export default class App extends Component {
   }
 
   handleRemoveItem (id){
-    axios.get(`http://localhost:4000/delete?id=${id}`)
+    axios.delete(`http://localhost:4000/delete${id}`)
       .then((res) => {
         alert(res.data);
           //前台重新渲染页面

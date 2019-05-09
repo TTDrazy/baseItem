@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
     });
 })
 //删除一条数据
-app.get('/delete',(req,res) => {
-    let {id} = req.query;
+app.delete('/delete:id',(req,res) => {
+    let id = req.params.id;
     db.query(`delete from teacherinfo where id = ${id}`,function(err,rows){
         if(err){
             res.end('删除失败！'+err);
